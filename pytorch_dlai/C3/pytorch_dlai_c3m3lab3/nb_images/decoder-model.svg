@@ -1,0 +1,752 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 800 500"
+   version="1.1"
+   id="svg4630"
+   sodipodi:docname="i.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview4632"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.6375"
+     inkscape:cx="324.27481"
+     inkscape:cy="250.68702"
+     inkscape:window-width="1854"
+     inkscape:window-height="1011"
+     inkscape:window-x="66"
+     inkscape:window-y="32"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg4630" />
+  <!-- Background -->
+  <rect
+     x="0"
+     y="0"
+     width="800"
+     height="500"
+     fill="white"
+     id="rect4434" />
+  <!-- Title -->
+  <text
+     x="400"
+     y="25"
+     text-anchor="middle"
+     font-family="Arial, sans-serif"
+     font-size="16"
+     font-weight="bold"
+     fill="#2c3e50"
+     id="text4436">Complete Decoder Model Architecture</text>
+  <!-- Input Tokens -->
+  <g
+     transform="translate(300.33136,38.669396)"
+     id="g4444">
+    <rect
+       x="0"
+       y="0"
+       width="200"
+       height="35"
+       rx="6"
+       fill="#e3f2fd"
+       stroke="#2196f3"
+       stroke-width="2"
+       id="rect4438" />
+    <text
+       x="100"
+       y="15"
+       text-anchor="middle"
+       font-size="11px"
+       font-weight="600"
+       fill="#1976d2"
+       id="text4440">Input Token IDs</text>
+    <text
+       x="100"
+       y="28"
+       text-anchor="middle"
+       font-size="9px"
+       fill="#1565c0"
+       id="text4442">[batch_size, seq_len]</text>
+  </g>
+  <!-- Down arrow -->
+  <path
+     d="M 400 85 L 400 100"
+     stroke="#666"
+     stroke-width="2"
+     marker-end="url(#arrowhead)"
+     id="path4446" />
+  <!-- Token Embeddings -->
+  <g
+     transform="translate(300, 105)"
+     id="g4454">
+    <rect
+       x="0"
+       y="0"
+       width="200"
+       height="40"
+       rx="6"
+       fill="#f3e5f5"
+       stroke="#9c27b0"
+       stroke-width="2"
+       id="rect4448" />
+    <text
+       x="100"
+       y="18"
+       text-anchor="middle"
+       font-size="11"
+       font-weight="600"
+       fill="#7b1fa2"
+       id="text4450">Token Embeddings</text>
+    <text
+       x="100"
+       y="32"
+       text-anchor="middle"
+       font-size="9"
+       fill="#9c27b0"
+       id="text4452">scaled by √d_model</text>
+  </g>
+  <!-- Plus sign -->
+  <g
+     transform="matrix(0.70334551,0,0,0.58489672,396.6844,155.46769)"
+     id="g4460">
+    <circle
+       cx="0"
+       cy="0"
+       r="12"
+       fill="#ffffff"
+       stroke="#4caf50"
+       stroke-width="2"
+       id="circle4456" />
+    <text
+       x="0"
+       y="5"
+       text-anchor="middle"
+       font-size="16px"
+       font-weight="bold"
+       fill="#4caf50"
+       id="text4458">+</text>
+  </g>
+  <!-- Positional Encoding -->
+  <g
+     transform="matrix(0.72110478,0,0,0.66253565,508.11324,116.16617)"
+     id="g4466">
+    <rect
+       x="0"
+       y="0"
+       width="120"
+       height="30"
+       rx="4"
+       fill="#fff8e1"
+       stroke="#ff9800"
+       stroke-width="1.5"
+       id="rect4462" />
+    <text
+       x="60"
+       y="20"
+       text-anchor="middle"
+       font-size="10px"
+       fill="#e65100"
+       id="text4464">Positional Encoding</text>
+  </g>
+  <!-- Down arrow with dropout label -->
+  <path
+     d="m 396.68575,168.84209 v 11.88917"
+     stroke="#666666"
+     stroke-width="1.74142"
+     marker-end="url(#arrowhead)"
+     id="path4468" />
+  <text
+     x="430"
+     y="175"
+     font-size="9"
+     fill="#666"
+     font-style="italic"
+     id="text4470">Dropout</text>
+  <!-- Transformer Stack -->
+  <g
+     transform="translate(200, 185)"
+     id="g4542">
+    <rect
+       x="0"
+       y="0"
+       width="400"
+       height="200"
+       rx="8"
+       fill="#f0f7ff"
+       stroke="#1565c0"
+       stroke-width="2.5"
+       id="rect4472" />
+    <text
+       x="200"
+       y="25"
+       text-anchor="middle"
+       font-family="Arial, sans-serif"
+       font-size="14"
+       font-weight="bold"
+       fill="#0d47a1"
+       id="text4474">Transformer Stack (num_layers = 3)</text>
+    <!-- Decoder Layer 1 -->
+    <g
+       transform="translate(20, 40)"
+       id="g4496">
+      <rect
+         x="0"
+         y="0"
+         width="360"
+         height="40"
+         rx="6"
+         fill="#fff3e0"
+         stroke="#ff9800"
+         stroke-width="1.5"
+         id="rect4476" />
+      <text
+         x="15"
+         y="25"
+         font-size="11"
+         font-weight="600"
+         fill="#e65100"
+         id="text4478">Layer 1:</text>
+      <rect
+         x="70"
+         y="8"
+         width="100"
+         height="24"
+         rx="3"
+         fill="#ffccbc"
+         stroke="#d84315"
+         stroke-width="1"
+         id="rect4480" />
+      <text
+         x="120"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#bf360c"
+         id="text4482">Self-Attention</text>
+      <path
+         d="M 170 20 L 185 20"
+         stroke="#666"
+         stroke-width="1"
+         marker-end="url(#arrowhead-small)"
+         id="path4484" />
+      <rect
+         x="190"
+         y="8"
+         width="80"
+         height="24"
+         rx="3"
+         fill="#c5e1a5"
+         stroke="#689f38"
+         stroke-width="1"
+         id="rect4486" />
+      <text
+         x="230"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#33691e"
+         id="text4488">Feed-Forward</text>
+      <path
+         d="M 270 20 L 285 20"
+         stroke="#666"
+         stroke-width="1"
+         marker-end="url(#arrowhead-small)"
+         id="path4490" />
+      <rect
+         x="290"
+         y="8"
+         width="60"
+         height="24"
+         rx="3"
+         fill="#e8f5e9"
+         stroke="#4caf50"
+         stroke-width="1"
+         id="rect4492" />
+      <text
+         x="320"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#2e7d32"
+         id="text4494">Add+Norm</text>
+    </g>
+    <!-- Decoder Layer 2 -->
+    <g
+       transform="translate(20, 90)"
+       id="g4518">
+      <rect
+         x="0"
+         y="0"
+         width="360"
+         height="40"
+         rx="6"
+         fill="#fff3e0"
+         stroke="#ff9800"
+         stroke-width="1.5"
+         id="rect4498" />
+      <text
+         x="15"
+         y="25"
+         font-size="11"
+         font-weight="600"
+         fill="#e65100"
+         id="text4500">Layer 2:</text>
+      <rect
+         x="70"
+         y="8"
+         width="100"
+         height="24"
+         rx="3"
+         fill="#ffccbc"
+         stroke="#d84315"
+         stroke-width="1"
+         id="rect4502" />
+      <text
+         x="120"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#bf360c"
+         id="text4504">Self-Attention</text>
+      <path
+         d="M 170 20 L 185 20"
+         stroke="#666"
+         stroke-width="1"
+         marker-end="url(#arrowhead-small)"
+         id="path4506" />
+      <rect
+         x="190"
+         y="8"
+         width="80"
+         height="24"
+         rx="3"
+         fill="#c5e1a5"
+         stroke="#689f38"
+         stroke-width="1"
+         id="rect4508" />
+      <text
+         x="230"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#33691e"
+         id="text4510">Feed-Forward</text>
+      <path
+         d="M 270 20 L 285 20"
+         stroke="#666"
+         stroke-width="1"
+         marker-end="url(#arrowhead-small)"
+         id="path4512" />
+      <rect
+         x="290"
+         y="8"
+         width="60"
+         height="24"
+         rx="3"
+         fill="#e8f5e9"
+         stroke="#4caf50"
+         stroke-width="1"
+         id="rect4514" />
+      <text
+         x="320"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#2e7d32"
+         id="text4516">Add+Norm</text>
+    </g>
+    <!-- Decoder Layer 3 -->
+    <g
+       transform="translate(20, 140)"
+       id="g4540">
+      <rect
+         x="0"
+         y="0"
+         width="360"
+         height="40"
+         rx="6"
+         fill="#fff3e0"
+         stroke="#ff9800"
+         stroke-width="1.5"
+         id="rect4520" />
+      <text
+         x="15"
+         y="25"
+         font-size="11"
+         font-weight="600"
+         fill="#e65100"
+         id="text4522">Layer 3:</text>
+      <rect
+         x="70"
+         y="8"
+         width="100"
+         height="24"
+         rx="3"
+         fill="#ffccbc"
+         stroke="#d84315"
+         stroke-width="1"
+         id="rect4524" />
+      <text
+         x="120"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#bf360c"
+         id="text4526">Self-Attention</text>
+      <path
+         d="M 170 20 L 185 20"
+         stroke="#666"
+         stroke-width="1"
+         marker-end="url(#arrowhead-small)"
+         id="path4528" />
+      <rect
+         x="190"
+         y="8"
+         width="80"
+         height="24"
+         rx="3"
+         fill="#c5e1a5"
+         stroke="#689f38"
+         stroke-width="1"
+         id="rect4530" />
+      <text
+         x="230"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#33691e"
+         id="text4532">Feed-Forward</text>
+      <path
+         d="M 270 20 L 285 20"
+         stroke="#666"
+         stroke-width="1"
+         marker-end="url(#arrowhead-small)"
+         id="path4534" />
+      <rect
+         x="290"
+         y="8"
+         width="60"
+         height="24"
+         rx="3"
+         fill="#e8f5e9"
+         stroke="#4caf50"
+         stroke-width="1"
+         id="rect4536" />
+      <text
+         x="320"
+         y="23"
+         text-anchor="middle"
+         font-size="9"
+         fill="#2e7d32"
+         id="text4538">Add+Norm</text>
+    </g>
+  </g>
+  <!-- Causal Mask indicator -->
+  <g
+     transform="translate(620, 250)"
+     id="g4554">
+    <rect
+       x="0"
+       y="0"
+       width="100"
+       height="60"
+       rx="4"
+       fill="#ffebee"
+       stroke="#d32f2f"
+       stroke-width="1.5"
+       id="rect4544" />
+    <text
+       x="50"
+       y="15"
+       text-anchor="middle"
+       font-size="10"
+       font-weight="600"
+       fill="#c62828"
+       id="text4546">Causal Mask</text>
+    <text
+       x="50"
+       y="30"
+       text-anchor="middle"
+       font-size="8"
+       fill="#d32f2f"
+       id="text4548">Applied at each</text>
+    <text
+       x="50"
+       y="42"
+       text-anchor="middle"
+       font-size="8"
+       fill="#d32f2f"
+       id="text4550">attention layer</text>
+    <text
+       x="50"
+       y="54"
+       text-anchor="middle"
+       font-size="8"
+       fill="#d32f2f"
+       id="text4552">(no future peek)</text>
+  </g>
+  <!-- Arrow from mask to transformer -->
+  <path
+     d="M 620 280 L 605 280"
+     stroke="#d32f2f"
+     stroke-width="1.5"
+     stroke-dasharray="3,2"
+     marker-end="url(#arrowhead-small)"
+     id="path4556" />
+  <!-- Down arrow -->
+  <path
+     d="m 399.13287,396.33905 v 5.32259"
+     stroke="#666666"
+     stroke-width="1.43647"
+     marker-end="url(#arrowhead)"
+     id="path4558" />
+  <!-- Final Layer Norm -->
+  <g
+     transform="translate(300, 405)"
+     id="g4564">
+    <rect
+       x="0"
+       y="0"
+       width="200"
+       height="35"
+       rx="6"
+       fill="#fff3e0"
+       stroke="#ff9800"
+       stroke-width="2"
+       id="rect4560" />
+    <text
+       x="100"
+       y="22"
+       text-anchor="middle"
+       font-size="11"
+       font-weight="600"
+       fill="#e65100"
+       id="text4562">Final Layer Norm</text>
+  </g>
+  <!-- Down arrow -->
+  <path
+     d="m 400,450.26287 v 6.16391"
+     stroke="#666666"
+     stroke-width="1.53538"
+     marker-end="url(#arrowhead)"
+     id="path4566" />
+  <!-- Output Projection -->
+  <g
+     transform="translate(300, 460)"
+     id="g4574">
+    <rect
+       x="0"
+       y="0"
+       width="200"
+       height="35"
+       rx="6"
+       fill="#e8f5e9"
+       stroke="#4caf50"
+       stroke-width="2"
+       id="rect4568" />
+    <text
+       x="100"
+       y="15"
+       text-anchor="middle"
+       font-size="11"
+       font-weight="600"
+       fill="#2e7d32"
+       id="text4570">Output Projection</text>
+    <text
+       x="100"
+       y="28"
+       text-anchor="middle"
+       font-size="9"
+       fill="#4caf50"
+       id="text4572">[batch, seq_len, vocab_size]</text>
+  </g>
+  <!-- Generation Process (left side) -->
+  <g
+     transform="matrix(1.0000284,0,0,0.98791797,19.997867,59.996093)"
+     id="g4598">
+    <rect
+       x="0.018699925"
+       y="0.018694839"
+       width="149.9626"
+       height="193.84998"
+       rx="5.9985042"
+       fill="#f8f9fa"
+       stroke="#dee2e6"
+       stroke-width="1.03763"
+       id="rect4576" />
+    <text
+       x="75"
+       y="20"
+       text-anchor="middle"
+       font-size="11px"
+       font-weight="600"
+       fill="#495057"
+       id="text4578">Generation Process</text>
+    <text
+       x="10"
+       y="45"
+       font-size="9px"
+       fill="#495057"
+       font-weight="600"
+       id="text4580">Step 1:</text>
+    <text
+       x="10"
+       y="58"
+       font-size="8px"
+       fill="#6c757d"
+       id="text4582">[START] → &quot;To&quot;</text>
+    <text
+       x="10"
+       y="80"
+       font-size="9px"
+       fill="#495057"
+       font-weight="600"
+       id="text4584">Step 2:</text>
+    <text
+       x="10"
+       y="93"
+       font-size="8px"
+       fill="#6c757d"
+       id="text4586">[START, To] → &quot;be&quot;</text>
+    <text
+       x="10"
+       y="115"
+       font-size="9px"
+       fill="#495057"
+       font-weight="600"
+       id="text4588">Step 3:</text>
+    <text
+       x="10"
+       y="128"
+       font-size="8px"
+       fill="#6c757d"
+       id="text4590">[START, To, be] → &quot;or&quot;</text>
+    <text
+       x="10"
+       y="150"
+       font-size="9px"
+       fill="#495057"
+       font-weight="600"
+       id="text4592">Step 4:</text>
+    <text
+       x="10"
+       y="163"
+       font-size="8px"
+       fill="#6c757d"
+       id="text4594">[START, To, be, or] → &quot;not&quot;</text>
+    <text
+       x="10"
+       y="185"
+       font-size="8px"
+       fill="#495057"
+       font-style="italic"
+       id="text4596">Continues autoregressively...</text>
+  </g>
+  <!-- Model Parameters (right side) -->
+  <g
+     transform="translate(620, 60)"
+     id="g4620">
+    <rect
+       x="0"
+       y="0"
+       width="150"
+       height="160"
+       rx="6"
+       fill="#f8f9fa"
+       stroke="#dee2e6"
+       stroke-width="1"
+       id="rect4600" />
+    <text
+       x="75"
+       y="20"
+       text-anchor="middle"
+       font-size="11"
+       font-weight="600"
+       fill="#495057"
+       id="text4602">Model Parameters</text>
+    <text
+       x="10"
+       y="40"
+       font-size="9"
+       fill="#495057"
+       id="text4604">vocab_size:</text>
+    <text
+       x="10"
+       y="52"
+       font-size="8"
+       fill="#6c757d"
+       id="text4606">Size of token vocabulary</text>
+    <text
+       x="10"
+       y="70"
+       font-size="9"
+       fill="#495057"
+       id="text4608">d_model: 256</text>
+    <text
+       x="10"
+       y="82"
+       font-size="8"
+       fill="#6c757d"
+       id="text4610">Hidden dimension</text>
+    <text
+       x="10"
+       y="100"
+       font-size="9"
+       fill="#495057"
+       id="text4612">nhead: 8</text>
+    <text
+       x="10"
+       y="112"
+       font-size="8"
+       fill="#6c757d"
+       id="text4614">Attention heads</text>
+    <text
+       x="10"
+       y="130"
+       font-size="9"
+       fill="#495057"
+       id="text4616">num_layers: 3</text>
+    <text
+       x="10"
+       y="142"
+       font-size="8"
+       fill="#6c757d"
+       id="text4618">Decoder layers</text>
+  </g>
+  <!-- Arrow definitions -->
+  <defs
+     id="defs4628">
+    <marker
+       id="arrowhead"
+       markerWidth="10"
+       markerHeight="7"
+       refX="9"
+       refY="3.5"
+       orient="auto"
+       fill="#666">
+      <polygon
+         points="0 0, 10 3.5, 0 7"
+         id="polygon4622" />
+    </marker>
+    <marker
+       id="arrowhead-small"
+       markerWidth="7"
+       markerHeight="5"
+       refX="6"
+       refY="2.5"
+       orient="auto"
+       fill="#666">
+      <polygon
+         points="0 0, 7 2.5, 0 5"
+         id="polygon4625" />
+    </marker>
+  </defs>
+</svg>

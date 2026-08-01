@@ -1,0 +1,130 @@
+<svg viewBox="0 0 950 380" xmlns="http://www.w3.org/2000/svg">
+  <!-- White Background -->
+  <rect x="0" y="0" width="950" height="380" fill="white"/>
+  
+  <!-- Title -->
+  <text x="475" y="30" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#2c3e50">Transformer Encoder Block Architecture</text>
+  
+  <!-- Main Components -->
+  <g transform="translate(0, 80)">
+    
+    <!-- Input -->
+    <rect x="40" y="60" width="80" height="45" rx="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="80" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#1976d2">Input</text>
+    <text x="80" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">X</text>
+    
+    <!-- Arrow 1 -->
+    <path d="M 120 82.5 L 150 82.5" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Layer Norm 1 -->
+    <rect x="155" y="60" width="85" height="45" rx="6" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="197.5" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#e65100">Layer Norm</text>
+    
+    <!-- Arrow 2 -->
+    <path d="M 240 82.5 L 270 82.5" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Multi-Head Attention -->
+    <rect x="275" y="60" width="130" height="45" rx="6" fill="#f3e5f5" stroke="#9c27b0" stroke-width="2"/>
+    <text x="340" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#6a1b9a">Multi-Head</text>
+    <text x="340" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#6a1b9a">Self-Attention</text>
+    
+    <!-- First Residual Connection with label -->
+    <g>
+      <!-- The residual path -->
+      <path d="M 80 105 L 80 140 L 435 140 L 435 105" 
+            stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="6,3" 
+            fill="none" opacity="0.9"/>
+      <!-- Small arrow on residual path -->
+      <path d="M 420 140 L 430 135 L 430 145 Z" fill="#2e7d32" opacity="0.9"/>
+      <!-- Label -->
+      <rect x="220" y="130" width="100" height="20" rx="3" fill="white" stroke="#2e7d32" stroke-width="1"/>
+      <text x="270" y="143" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2e7d32" font-weight="500">Residual (copy of X)</text>
+    </g>
+    
+    <!-- Add Circle 1 with label -->
+    <g>
+      <circle cx="435" cy="82.5" r="18" fill="white" stroke="#2e7d32" stroke-width="2.5"/>
+      <text x="435" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2e7d32">+</text>
+      <!-- Addition explanation -->
+      <text x="435" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32" font-style="italic">X + Attention(X)</text>
+    </g>
+    
+    <!-- Arrow 3 -->
+    <path d="M 453 82.5 L 480 82.5" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Layer Norm 2 -->
+    <rect x="485" y="60" width="85" height="45" rx="6" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="527.5" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#e65100">Layer Norm</text>
+    
+    <!-- Arrow 4 -->
+    <path d="M 570 82.5 L 600 82.5" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Feed-Forward Network -->
+    <rect x="605" y="60" width="110" height="45" rx="6" fill="#e0f7fa" stroke="#00acc1" stroke-width="2"/>
+    <text x="660" y="78" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#006064">Feed-Forward</text>
+    <text x="660" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#006064">Network</text>
+    
+    <!-- Second Residual Connection with label -->
+    <g>
+      <!-- The residual path -->
+      <path d="M 527.5 105 L 527.5 160 L 745 160 L 745 105" 
+            stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="6,3" 
+            fill="none" opacity="0.9"/>
+      <!-- Small arrow on residual path -->
+      <path d="M 730 160 L 740 155 L 740 165 Z" fill="#2e7d32" opacity="0.9"/>
+      <!-- Label -->
+      <rect x="580" y="150" width="110" height="20" rx="3" fill="white" stroke="#2e7d32" stroke-width="1"/>
+      <text x="635" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#2e7d32" font-weight="500">Residual (copy of Y)</text>
+    </g>
+    
+    <!-- Add Circle 2 with label -->
+    <g>
+      <circle cx="745" cy="82.5" r="18" fill="white" stroke="#2e7d32" stroke-width="2.5"/>
+      <text x="745" y="88" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#2e7d32">+</text>
+      <!-- Addition explanation -->
+      <text x="745" y="45" text-anchor="middle" font-family="Arial, sans-serif" font-size="9" fill="#2e7d32" font-style="italic">Y + FFN(Y)</text>
+    </g>
+    
+    <!-- Arrow 5 -->
+    <path d="M 763 82.5 L 800 82.5" stroke="#555" stroke-width="2" marker-end="url(#arrowhead)"/>
+    
+    <!-- Output -->
+    <rect x="805" y="60" width="80" height="45" rx="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="845" y="85" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="600" fill="#1976d2">Output</text>
+    <text x="845" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#666">Z</text>
+    
+    <!-- Annotations -->
+    <text x="340" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666" font-style="italic">Learns relationships</text>
+    <text x="660" y="35" text-anchor="middle" font-family="Arial, sans-serif" font-size="11" fill="#666" font-style="italic">Learns transformations</text>
+  </g>
+  
+  <!-- Explanation Box -->
+  <g transform="translate(50, 270)">
+    <rect x="0" y="0" width="850" height="90" rx="5" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+    
+    <text x="425" y="20" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#2c3e50">How Residual Connections Work:</text>
+    
+    <text x="20" y="40" font-family="Arial, sans-serif" font-size="11" fill="#495057">
+      1. The input to each sub-layer is copied and passed around it (green dashed line)
+    </text>
+    <text x="20" y="58" font-family="Arial, sans-serif" font-size="11" fill="#495057">
+      2. The sub-layer processes the input normally (through attention or feed-forward)
+    </text>
+    <text x="20" y="76" font-family="Arial, sans-serif" font-size="11" fill="#495057">
+      3. The original input and processed output are added together (+) element-wise
+    </text>
+    
+    <rect x="250" y="82" width="350" height="1" fill="#dee2e6"/>
+    
+    <text x="425" y="102" text-anchor="middle" font-family="Arial, sans-serif" font-size="10" fill="#6c757d" font-weight="600" font-style="italic">
+      This preserves information and enables training of very deep networks
+    </text>
+  </g>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#555">
+      <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+  </defs>
+</svg>

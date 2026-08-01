@@ -1,0 +1,111 @@
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect x="0" y="0" width="700" height="400" fill="white"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#2c3e50">Decoder Block Architecture</text>
+  
+  <!-- Input -->
+  <g transform="translate(275, 50)">
+    <rect x="0" y="0" width="150" height="40" rx="6" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#1976d2">Input Sequence</text>
+    <text x="75" y="33" text-anchor="middle" font-size="9" fill="#1565c0">[batch, seq_len, d_model]</text>
+  </g>
+  
+  <!-- Down arrow -->
+  <path d="M 350 90 L 350 110" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- First Sub-layer: Masked Self-Attention -->
+  <g transform="translate(100, 115)">
+    <rect x="0" y="0" width="500" height="90" rx="8" fill="#fff3e0" stroke="#ff9800" stroke-width="2"/>
+    <text x="250" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#e65100">Sub-layer 1: Masked Self-Attention</text>
+    
+    <!-- Components flow -->
+    <g transform="translate(50, 40)">
+      <!-- Layer Norm -->
+      <rect x="0" y="0" width="80" height="30" rx="4" fill="#ffecb3" stroke="#ffa000" stroke-width="1.5"/>
+      <text x="40" y="20" text-anchor="middle" font-size="10" fill="#e65100">Layer Norm</text>
+      
+      <!-- Arrow -->
+      <path d="M 80 15 L 100 15" stroke="#666" stroke-width="1.5" marker-end="url(#arrowhead-small)"/>
+      
+      <!-- MHA -->
+      <rect x="105" y="0" width="140" height="30" rx="4" fill="#ffccbc" stroke="#d84315" stroke-width="1.5"/>
+      <text x="175" y="20" text-anchor="middle" font-size="10" fill="#bf360c">Masked Self-Attention</text>
+      
+      <!-- Arrow -->
+      <path d="M 245 15 L 265 15" stroke="#666" stroke-width="1.5" marker-end="url(#arrowhead-small)"/>
+      
+      <!-- Dropout + Add -->
+      <rect x="270" y="0" width="100" height="30" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1.5"/>
+      <text x="320" y="20" text-anchor="middle" font-size="10" fill="#2e7d32">Dropout + Add</text>
+    </g>
+    
+    <!-- Causal mask note -->
+    <text x="250" y="80" text-anchor="middle" font-size="9" fill="#d32f2f" font-style="italic">Causal mask prevents attending to future tokens</text>
+  </g>
+  
+  <!-- Down arrow with label -->
+  <path d="M 350 205 L 350 225" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="420" y="218" font-size="9" fill="#666" font-style="italic">Contextualized representations</text>
+  
+  <!-- Second Sub-layer: Feed-Forward -->
+  <g transform="translate(100, 230)">
+    <rect x="0" y="0" width="500" height="90" rx="8" fill="#e3f2fd" stroke="#2196f3" stroke-width="2"/>
+    <text x="250" y="20" text-anchor="middle" font-size="13" font-weight="600" fill="#1565c0">Sub-layer 2: Feed-Forward Network</text>
+    
+    <!-- Components flow -->
+    <g transform="translate(50, 40)">
+      <!-- Layer Norm -->
+      <rect x="0" y="0" width="80" height="30" rx="4" fill="#bbdefb" stroke="#1976d2" stroke-width="1.5"/>
+      <text x="40" y="20" text-anchor="middle" font-size="10" fill="#0d47a1">Layer Norm</text>
+      
+      <!-- Arrow -->
+      <path d="M 80 15 L 100 15" stroke="#666" stroke-width="1.5" marker-end="url(#arrowhead-small)"/>
+      
+      <!-- FFN -->
+      <rect x="105" y="0" width="140" height="30" rx="4" fill="#c5e1a5" stroke="#689f38" stroke-width="1.5"/>
+      <text x="175" y="20" text-anchor="middle" font-size="10" fill="#33691e">Feed-Forward Network</text>
+      
+      <!-- Arrow -->
+      <path d="M 245 15 L 265 15" stroke="#666" stroke-width="1.5" marker-end="url(#arrowhead-small)"/>
+      
+      <!-- Dropout + Add -->
+      <rect x="270" y="0" width="100" height="30" rx="4" fill="#e8f5e9" stroke="#4caf50" stroke-width="1.5"/>
+      <text x="320" y="20" text-anchor="middle" font-size="10" fill="#2e7d32">Dropout + Add</text>
+    </g>
+    
+    <!-- FFN details -->
+    <text x="250" y="80" text-anchor="middle" font-size="9" fill="#666" font-style="italic">d_model → dim_feedforward (2048) → d_model</text>
+  </g>
+  
+  <!-- Down arrow -->
+  <path d="M 350 320 L 350 340" stroke="#666" stroke-width="2" marker-end="url(#arrowhead)"/>
+  
+  <!-- Output -->
+  <g transform="translate(275, 345)">
+    <rect x="0" y="0" width="150" height="40" rx="6" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="75" y="20" text-anchor="middle" font-size="11" font-weight="600" fill="#2e7d32">Output</text>
+    <text x="75" y="33" text-anchor="middle" font-size="9" fill="#4caf50">Same shape as input</text>
+  </g>
+  
+  <!-- Residual Connection Note -->
+  <g transform="translate(20, 160)">
+    <text x="0" y="0" font-size="10" font-weight="600" fill="#4caf50">Note:</text>
+    <text x="0" y="15" font-size="9" fill="#666">"Dropout + Add"</text>
+    <text x="0" y="28" font-size="9" fill="#666">means the original</text>
+    <text x="0" y="41" font-size="9" fill="#666">input is added to</text>
+    <text x="0" y="54" font-size="9" fill="#666">the layer output</text>
+    <text x="0" y="67" font-size="9" fill="#666">(residual connection)</text>
+  </g>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" fill="#666">
+      <polygon points="0 0, 10 3.5, 0 7"/>
+    </marker>
+    <marker id="arrowhead-small" markerWidth="7" markerHeight="5" refX="6" refY="2.5" orient="auto" fill="#666">
+      <polygon points="0 0, 7 2.5, 0 5"/>
+    </marker>
+  </defs>
+</svg>
